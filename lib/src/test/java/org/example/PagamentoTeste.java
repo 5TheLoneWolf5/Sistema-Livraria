@@ -56,11 +56,13 @@ public class PagamentoTeste {
         System.out.println(pagamentoTres.getDesconto());
 
     }
+
     @Test void testarDesconto() {
         pagamento.setValor(pagamento.aplicarDesconto());
         pagamentoDois.setValor(pagamentoDois.aplicarDesconto());
         pagamentoTres.setValor(pagamentoTres.aplicarDesconto());
     }
+
     @Test void testarPagamento() {
         pagamento.pagar();
         pagamentoDois.pagar();

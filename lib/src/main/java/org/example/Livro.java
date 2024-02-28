@@ -10,7 +10,7 @@ public class Livro {
 	private String[] autores;
 	private String descricao;
 	private int paginas;
-	private GregorianCalendar dataPublicacao = new GregorianCalendar(); // It needs to be initialized, else, it will complain when it gets printed or gets used (since it is not assigned anything). Also: Calendar is static. For today's info.
+	private GregorianCalendar dataPublicacao; // Also: Calendar is static and for today's info.
 	private String editora;
 	private String isbn;
 	
@@ -66,7 +66,7 @@ public class Livro {
 		
 		this.autores = new String[autores.length]; // Size of array. Not index.
 		
-		for (int i = 0; i < autores.length; i++) {
+		for (int i = 0; i < autores.length; i++) { // One could do it automatically by assigning object.
 			this.autores[i] = autores[i];
 		}
 	}
@@ -127,7 +127,7 @@ public class Livro {
 		
 		if (year >= 1660 && year <= 1790) {
 			return "Período Neoclássico.";
-		} else if (year > 1790 && year <= 1930) {
+		} else if (year > 1790 && year <= 1830) {
 			return "Período Romantico.";
 		} else if (year >= 1832 && year <= 1901) {
 			return "Período Vitoriano.";

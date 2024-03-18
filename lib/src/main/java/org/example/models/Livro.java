@@ -1,4 +1,4 @@
-package org.example;
+package org.example.models;
 
 //import java.util.Date;
 //import java.util.Arrays;
@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Livro {
+	
 	private String titulo;
 	private String[] autores;
 	private String descricao;
@@ -13,8 +14,10 @@ public class Livro {
 	private GregorianCalendar dataPublicacao; // Also: Calendar is static and for today's info.
 	private String editora;
 	private String isbn;
+	private int estoque;
+	private double preco;
 	
-	public Livro() { 
+	public Livro() {
 		
 		this.titulo = "Título";
 		this.autores = new String[] {"Autor 1", "Autor 2", "Autor 3"};
@@ -45,6 +48,31 @@ public class Livro {
 		this.dataPublicacao = dataPublicacao;
 		this.editora = editora;
 		this.isbn = isbn;
+	}
+	
+	public Livro(String titulo, String[] autores, String descricao, int paginas, GregorianCalendar dataPublicacao, String editora, String isbn, int estoque) {
+		this(titulo, autores, descricao, dataPublicacao);
+		this.titulo = titulo;
+		this.autores = autores;
+		this.descricao = descricao;
+		this.paginas = paginas;
+		this.dataPublicacao = dataPublicacao;
+		this.editora = editora;
+		this.isbn = isbn;
+		this.estoque = estoque;
+	}
+	
+	public Livro(String titulo, String[] autores, String descricao, int paginas, GregorianCalendar dataPublicacao, String editora, String isbn, int estoque, double preco) {
+		this(titulo, autores, descricao, dataPublicacao);
+		this.titulo = titulo;
+		this.autores = autores;
+		this.descricao = descricao;
+		this.paginas = paginas;
+		this.dataPublicacao = dataPublicacao;
+		this.editora = editora;
+		this.isbn = isbn;
+		this.estoque = estoque;
+		this.preco = preco;
 	}
 
 	
@@ -119,6 +147,22 @@ public class Livro {
 		if (isbn.length() == 10|| isbn.length() == 13) {
 			this.isbn = isbn;
 		}
+	}
+	
+	public int getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(int estoque) {
+		this.estoque = estoque;
+	}
+	
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
 	}
 	
 	public String descobrirPeriodo() {

@@ -8,6 +8,7 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
+    id("org.springframework.boot") version "3.2.3"
 }
 
 repositories {
@@ -26,6 +27,19 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation(libs.guava)
+    
+    // Spring Cloud OpenFeign
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.1.0")
+
+    // Spring Boot Starter Web
+    implementation("org.springframework.boot:spring-boot-starter-web:3.2.3")
+
+    // Spring Boot Starter Test
+    testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.3")
+
+    // JUnit Jupiter API
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+    
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

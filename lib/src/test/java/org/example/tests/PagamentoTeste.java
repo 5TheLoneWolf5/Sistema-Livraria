@@ -1,5 +1,9 @@
-package org.example;
+package org.example.tests;
 
+import org.example.*;
+import org.example.models.Cliente;
+import org.example.models.Livro;
+import org.example.models.Pagamento;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.GregorianCalendar;
@@ -31,15 +35,15 @@ public class PagamentoTeste {
         pagamento = new Pagamento();
 
         pagamento.setId(1);
-        pagamento.setCliente("Sophie Harrison");
-        pagamento.setValor(8.99);
+        pagamento.setCliente(new Cliente("Sophie Harrison", "342.234.654-32", "sophie@gmail.com", false));
+//        pagamento.setValor(8.99);
         pagamento.setFormaPagamento("Cartã de débito");
         pagamento.setProdutos(produtosUm);
         pagamento.setDataPedido(new GregorianCalendar(2017, 4, 7));
         pagamento.setDesconto(30);
 
-        pagamentoDois = new Pagamento(2, "Adam Stones", 39.99, "Cartão de crédito", produtosDois, new GregorianCalendar(2019, 12, 25));
-        pagamentoTres = new Pagamento(3, "Chris Greenwood", 50.50, "Dinheiro vivo", produtosTres, new GregorianCalendar(2020, 6, 4), 5);
+        pagamentoDois = new Pagamento(2, new Cliente("Adam Stones", "645.132.432-09", "adam@gmail.com", true), "Cartão de crédito", produtosDois, new GregorianCalendar(2019, 12, 25));
+        pagamentoTres = new Pagamento(3, new Cliente("Chris Greenwood", "125.042.453-43", "chris@gmail.com", false), "Dinheiro vivo", produtosTres, new GregorianCalendar(2020, 6, 4), 5);
 
     }
 
@@ -49,7 +53,7 @@ public class PagamentoTeste {
 
         System.out.println(pagamento.getId());
         System.out.println(pagamentoDois.getCliente());
-        System.out.println(pagamentoDois.getValor());
+//        System.out.println(pagamentoDois.getValor());
         System.out.println(pagamentoDois.getFormaPagamento());
         System.out.println(pagamentoTres.getProdutos());
         System.out.println(pagamentoTres.getDataPedido());
@@ -58,9 +62,9 @@ public class PagamentoTeste {
     }
 
     @Test void testarDesconto() {
-        pagamento.setValor(pagamento.aplicarDesconto());
-        pagamentoDois.setValor(pagamentoDois.aplicarDesconto());
-        pagamentoTres.setValor(pagamentoTres.aplicarDesconto());
+//        pagamento.setValor(pagamento.aplicarDesconto());
+//        pagamentoDois.setValor(pagamentoDois.aplicarDesconto());
+//        pagamentoTres.setValor(pagamentoTres.aplicarDesconto());
     }
 
     @Test void testarPagamento() {

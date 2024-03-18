@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "8fd453bc-a503-4728-9a22-6edda470a6c0",
+		"name": "Cliente_Sistema_Livraria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33670424"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8090/cliente/listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/cliente/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cliente",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/cliente/incluir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nome\": \"Darwin Maxwell\",\r\n        \"cpf\": \"234.123.675-12\",\r\n        \"email\": \"darwin@gmail.com\",\r\n        \"cartaoFidelidade\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8095/cliente/incluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"cliente",
+						"incluir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/cliente/excluir/323",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/cliente/excluir/323",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"cliente",
+						"excluir",
+						"323"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

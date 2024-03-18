@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "7f3bafcd-3c99-4035-beea-dd85bbf82146",
+		"name": "Pagamento_Sistema_Livraria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33670424"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8095/pagamento/listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8095/pagamento/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"pagamento",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/pagamento/incluir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 4,\r\n        \"cliente\": {\r\n            \"nome\": \"Daniel Sparks\",\r\n            \"cpf\": \"543.124.534-53\",\r\n            \"email\": \"daniel@gmail.com\",\r\n            \"cartaoFidelidade\": true\r\n        },\r\n        \"valor\": 30.20,\r\n        \"formaPagamento\": \"Boleto Bancário\",\r\n        \"produtos\": [\r\n            {\r\n                \"titulo\": \"Admirável mundo novo\",\r\n                \"autores\": [\r\n                    \"Aldous Huxley\"\r\n                ],\r\n                \"descricao\": \"Admirável Mundo Novo é um romance escrito por Aldous Huxley e publicado em 1932. A história se passa em Londres no ano 2540, o romance antecipa desenvolvimentos em tecnologia reprodutiva, hipnopedia, manipulação psicológica e condicionamento clássico, que se combinam para mudar profundamente a sociedade.\",\r\n                \"paginas\": 252,\r\n                \"dataPublicacao\": \"1932-04-06T03:00:00.000+00:00\",\r\n                \"editora\": \"Globo Livros\",\r\n                \"isbn\": \"9788525056443\",\r\n                \"estoque\": 0\r\n            },\r\n            {\r\n                \"titulo\": \"Sherlock Holmes\",\r\n                \"autores\": [\r\n                    \"Arthur Conan Doyle\"\r\n                ],\r\n                \"descricao\": \"Um Estudo em Vermelho é um romance policial escrito por Sir Arthur Conan Doyle, publicado originalmente pela revista Beeton's Christmas Annual em novembro de 1887. A primeira edição, em formato de livro, só seria lançada em julho de 1888, com ilustrações da autoria de Richard Gutschmidt.\",\r\n                \"paginas\": 0,\r\n                \"dataPublicacao\": \"1887-08-03T03:00:00.000+00:00\",\r\n                \"editora\": \"Editora\",\r\n                \"isbn\": \"1234567890123\",\r\n                \"estoque\": 0\r\n            }\r\n        ],\r\n        \"dataPedido\": \"2020-12-22T03:00:00.000+00:00\",\r\n        \"desconto\": 10.0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8095/pagamento/incluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"pagamento",
+						"incluir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/pagamento/excluir/2/324.123.765-43",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8095/pagamento/excluir/2/324.123.765-43",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"pagamento",
+						"excluir",
+						"2",
+						"324.123.765-43"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
